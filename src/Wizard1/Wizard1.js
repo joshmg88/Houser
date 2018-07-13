@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+// import { Link } from 'react-router-dom'
+// import axios from 'axios'
 
-class Wizard extends Component {
+class Wizard1 extends Component {
 
     constructor() {
         super()
@@ -20,17 +21,14 @@ class Wizard extends Component {
     handleState = (value) => { this.setState({ state: value }); }
     handleZip = (value) => { this.setState({ zipcode: value }); }
 
-    handleAdd = () => {
-        const { name, address, city, state, zipcode } = this.state
-        axios.post('/api/houses', { name, address, city, state, zipcode })
-    }
+
+    // <Link to='/'><button>Cancel</button></Link>
 
     render() {
         // console.log(this.state);
         return (
             <div>
                 <h3>Wizard</h3>
-                <Link to='/'><button>Cancel</button></Link>
                 <input type="text" placeholder="name" onChange={e => this.handleName(e.target.value)} />
                 <input type="text" placeholder='address' onChange={e => this.handleAddress(e.target.value)} />
                 <input type="text" placeholder='city' onChange={e => this.handleCity(e.target.value)} />
@@ -42,4 +40,4 @@ class Wizard extends Component {
     }
 }
 
-export default Wizard; 
+export default Wizard1; 
